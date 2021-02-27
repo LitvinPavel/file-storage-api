@@ -2,7 +2,7 @@ const fileService = require('../services/file-service');
 
 module.exports = function (app) {
 
-    app.get('/api/v1/files/', (req, res) =>
+    app.get('/api/v1/files/', (_req, res) =>
         fileService.findAllFiles()
             .then(allFiles => res.json(allFiles))
             .catch(e => console.log(e)));
