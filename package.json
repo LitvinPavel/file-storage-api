@@ -1,0 +1,26 @@
+{
+  "name": "file-storage-api",
+  "version": "1.0.0",
+  "description": "file storage api for deploy to heroku",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LitvinPavel/file-storage-api.git"
+  },
+  "author": "Pavel Litvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LitvinPavel/file-storage-api/issues"
+  },
+  "homepage": "https://github.com/LitvinPavel/file-storage-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18"
+  }
+}
