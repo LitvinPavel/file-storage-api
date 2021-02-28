@@ -19,10 +19,10 @@ conn.once('open', () => {
 const storage = new GridFsStorage({
    url: config.db,
    cache: true,
-   file: (req, file) => {
+   file: (_req, file) => {
       return {
          bucketName: 'file-uploads',
-         filename: `${Date.now()}-${file.originalname}`,
+         filename: file.originalname,
          metadata: {
          extension: file.originalname.split(".")[1]
          }
