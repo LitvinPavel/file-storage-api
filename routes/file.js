@@ -22,7 +22,7 @@ const storage = new GridFsStorage({
    file: (_req, file) => {
       return {
          bucketName: 'file-uploads',
-         filename: file.originalname.split(".")[0],
+         filename: file.originalname,
          metadata: {
          extension: file.originalname.split(".")[1]
          }
@@ -51,9 +51,14 @@ router.get('/files/:filename', (req, res) => {
 
 router.get('/files', (req, res) => {
    gfs.files.find().toArray((err, files) => {
-      if (!files || files.length === 0) {
+      if (!Array.isArray(files)) {
          return res.status(404).json({
             message: "Could not find files"
+         });
+      }
+      if (files.length === 0) {
+         return res.status(204).json({
+            message: "No Content"
          });
       }
       return res.json(files);
