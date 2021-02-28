@@ -22,7 +22,7 @@ const storage = new GridFsStorage({
    file: (_req, file) => {
       return {
          bucketName: 'file-uploads',
-         filename: file.originalname,
+         filename: file.originalname.split(".")[0],
          metadata: {
          extension: file.originalname.split(".")[1]
          }
