@@ -2,10 +2,9 @@
   "name": "file-storage-api",
   "version": "1.0.0",
   "description": "file storage api for deploy to heroku",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,10 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.11.18"
+    "mongoose": "^5.11.18",
+    "multer": "^1.3.0",
+    "multer-gridfs-storage": "^3.0.0",
+    "gridfs-stream": "^1.1.1",
+    "morgan": "^1.9.0"
   }
 }
